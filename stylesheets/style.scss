@@ -1,0 +1,18 @@
+body{
+
+}
+
+main.frame{
+    $title-font: "Montserrat", sans-serif;
+    $title-size: 18pt;
+    .title{
+        font-family: $title-font;
+        font-size: $title-size;
+        display: block;
+    }
+    .subtitle{
+        font-family: $title-font;
+        font-size: calc($title-size - 4pt);
+        display: block;
+    }
+}

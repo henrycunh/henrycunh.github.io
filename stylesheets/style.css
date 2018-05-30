@@ -1,0 +1,12 @@
+main.frame .title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18pt;
+  display: block;
+}
+
+main.frame .subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: calc($title-size - 4pt);
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */
