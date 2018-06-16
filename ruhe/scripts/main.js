@@ -59,7 +59,7 @@ const changeBackground = url => {
 const showMemory = index => {
     console.log(index)
     let memory = memories[index]
-    let date = new Date(memory.data)
+    let date = new Date(memory.date)
     let dateStr = `${date.getDay()}/${date.getMonth()}/${date.getYear()}`
     $("#memory-title").html(memory.title)
     $("#memory-desc").html(memory.desc)
