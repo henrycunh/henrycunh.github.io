@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>you</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+    <link rel="shortcut icon" type="image/png" href="assets/icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAJGMRHONmmZjcyiJuyCnRIiFRhr2cQCRs",
+        authDomain: "souvenir-ruhe.firebaseapp.com",
+        databaseURL: "https://souvenir-ruhe.firebaseio.com",
+        projectId: "souvenir-ruhe",
+        storageBucket: "souvenir-ruhe.appspot.com",
+        messagingSenderId: "636424704381"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="scripts/main.js"></script>
+</head>
+
+<body>
+    <div id="staticbg"></div>
+    <div id="ratio">
+        <div id="welcome-message">souvenir</div>
+        <div id="welcome-message-sub">for memories you shall tap</div>
+        <div id="back"></div>
+
+        <div id="memory">
+            <div id="memory-title">Titulo</div>
+            <div id="memory-date">05/08/1999</div>
+            <div id="memory-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam veniam repudiandae, tempora beatae dolorem illo provident, architecto quam quibusdam quis numquam praesentium iusto voluptas natus at in ut, quo quisquam.</div>
+        </div>
+
+
+        <button class="action add" onclick='addMemory()'>
+            <i class="far fa-heart icon"></i>
+            add memory
+        </button>
+        <button class="action random" onclick='showRandomMemory()'>
+            <i class="fas fa-random icon"></i>
+            random memory
+        </button>
+    </div>
+
+    <div id="add-memory-popup">
+        <img src="assets/loading.svg" id='add-memory-load' alt="">
+        <div id="add-memory-dimmer"></div>
+        <button id="close-add-memory" onclick='closeAddMemoryPopup()'>
+            <i class="far fa-times-circle"></i>
+        </button>
+        <div class="form">
+            <label>título</label>
+            <input type="text" class='input' id='add-memory-title'>
+            <label>descrição</label>
+            <textarea class='input' id="add-memory-desc"></textarea>
+            <label>data</label>
+            <input type="date" class='input' id='add-memory-date'>
+            <label class="file" id='add-memory-image-label'>
+                <input type="file" id="add-memory-image" onchange="changeInputTitle()">
+                <i class="fas fa-image"></i>
+                <span id='add-memory-image-label-text'>imagem</span>
+            </label>
+            <button onclick='saveMemory()'>
+                <i class="fas fa-save"></i>
+                salvar
+            </button>
+        </div>
+
+        
+    </div>
+</body>
+
+</html>
