@@ -63,7 +63,7 @@ const showMemory = index => {
     let dateStr = `${date.getDay()}/${date.getMonth()}/${date.getYear()}`
     $("#memory-title").html(memory.title)
     $("#memory-desc").html(memory.desc)
-    $("#memory-data").html(dateStr)
+    $("#memory-date").html(dateStr)
     changeBackground(memory.image)
 }
 
